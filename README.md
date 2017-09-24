@@ -12,18 +12,19 @@ redis-server: 3.2.1
 # command
 1. start celery
 celery -A celery_pro worker --app=celery_pro.celery_test:app --loglevel=debug
-```
+```shell
 -- celery_pro is the directory
 -- celery_test is the script to define some celery parameter
 -- app is Celery() instance
 ```
 2. start schedule celery task
+
 -- start celery server
-```
+```shell
 celery -A celery_pro worker --app=celery_pro.celery_test:app --loglevel=debug
 ```
 -- start celery client
-```
+```shell
 celery -A celery_pro.periodic_tasks beat --loglevel=debug
 ```
 
